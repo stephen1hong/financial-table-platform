@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+
+# Project outputs
+output/
+data/raw/
+data/inventory/
+*.log
+
+# Editor/cache
+.vscode/

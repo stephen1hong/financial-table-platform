@@ -1,0 +1,22 @@
+{
+  "documents": [
+    {
+      "id": "wmt-2025",
+      "company": "Walmart",
+      "form": "10-K",
+      "fiscal_year": 2025,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000021/wmt-20250131.htm",
+      "filename": "wmt-20250131.htm",
+      "sha256": "d18ca5ca1389dc95be85fa0202d750363878837cfe53bc61141069f520f86083"
+    },
+    {
+      "id": "aapl-2025",
+      "company": "Apple",
+      "form": "10-K",
+      "fiscal_year": 2025,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "filename": "aapl-20250927.htm",
+      "sha256": "37aefffd496784c51157131a910702ff2f8c0da29fccb4100a58db2d04a5332d"
+    }
+  ]
+}

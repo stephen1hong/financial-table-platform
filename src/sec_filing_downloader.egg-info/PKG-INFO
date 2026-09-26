@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: sec-filing-downloader
+Version: 0.1.0
+Summary: Reproducible SEC filing download milestone
+Requires-Python: >=3.12
+Requires-Dist: requests>=2.31

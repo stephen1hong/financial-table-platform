@@ -9,6 +9,8 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from .manifest import load_manifest
+from .filing_profiles import PROFILES
+from .accounting import STATEMENT_ANCHORS, qname
 from .downloader import MANIFEST_PATH, RAW_DIR
 
 
@@ -110,21 +112,57 @@ def _is_income_statement_heading(heading: str) -> bool:
     return _is_income_statement_text(heading)
 
 
+def select_statement_index(soup: BeautifulSoup, document: dict[str, Any]) -> int:
+    """Require all mapped rows and consolidated duration contexts; never rank by size."""
+    if document["id"] not in PROFILES:
+        raise ValueError(f"Unsupported filing: {document['id']}")
+    _, entity, start, end, mappings = PROFILES[document["id"]]
+    contexts = {}
+    for context in soup.find_all("xbrli:context"):
+        def text(name):
+            node = context.find("xbrli:" + name)
+            return node.get_text(strip=True) if node else None
+        identifier = context.find("xbrli:identifier")
+        contexts[context["id"]] = (
+            (text("identifier") or "").lstrip("0") == entity
+            and identifier.get("scheme") == "http://www.sec.gov/CIK"
+            and text("startdate") == start and text("enddate") == end
+            and not context.find(["xbrli:segment", "xbrli:scenario", "xbrli:instant"])
+        )
+    matches = []
+    for index, table in enumerate(soup.find_all("table"), 1):
+        valid = True
+        for metric in STATEMENT_ANCHORS.get(document["id"], mappings):
+            label, concept = mappings[metric]
+            rows = [row for row in table.find_all("tr")
+                    if any(normalize_text(cell.get_text(" ", strip=True)) == label
+                           for cell in row.find_all(["td", "th"]))]
+            if len(rows) != 1:
+                valid = False
+                break
+            tagged = rows[0].find_all("ix:nonfraction", attrs={"name": qname(concept)})
+            if not any(contexts.get(tag.get("contextref"), False) for tag in tagged):
+                valid = False
+                break
+            # Reject a row that mixes segment and consolidated figures.
+            if any(soup.find("xbrli:context", id=tag.get("contextref")) is not None
+                   and soup.find("xbrli:context", id=tag.get("contextref")).find(["xbrli:segment", "xbrli:scenario"])
+                   for tag in tagged):
+                valid = False
+                break
+        if valid:
+            matches.append(index)
+    if len(matches) != 1:
+        raise ValueError(f"Expected one consolidated income statement for {document['id']}; found {matches}")
+    return matches[0]
+
+
 def identify_income_statements(document: dict[str, Any], raw_dir: str | Path) -> list[dict[str, Any]]:
-    matches: list[dict[str, Any]] = []
-    for entry in inventory_tables(document, raw_dir):
-        heading = entry["heading"]
-        preview = entry["preview"]
-        lowered_heading = heading.lower()
-        is_index_page = "index to consolidated financial statements" in lowered_heading
-        is_report_page = "report s of independent registered public accounting firm" in lowered_heading
-
-        if is_index_page or is_report_page:
-            continue
-
-        if _is_income_statement_heading(heading) or _is_income_statement_text(preview):
-            matches.append({**entry, "classification": "consolidated_income_statement"})
-    return matches
+    path = Path(raw_dir) / document["filename"]
+    soup = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
+    index = select_statement_index(soup, document)
+    entry = inventory_tables(document, raw_dir)[index - 1]
+    return [{**entry, "classification": "consolidated_income_statement"}]
 
 
 def inventory_manifest(manifest_path: str | Path = MANIFEST_PATH, raw_dir: str | Path = RAW_DIR) -> list[dict[str, Any]]:
@@ -144,10 +182,7 @@ def build_inventory_report(manifest_path: str | Path = MANIFEST_PATH, raw_dir: s
         document_tables = inventory_tables(document, raw_dir)
         matches = identify_income_statements(document, raw_dir)
         if matches:
-            selected_income_statements[document["id"]] = max(
-                matches,
-                key=lambda item: (item["row_count"], item["column_count"], item["table_index"]),
-            )
+            selected_income_statements[document["id"]] = matches[0]
         for entry in document_tables:
             entry["classification"] = (
                 "consolidated_income_statement"

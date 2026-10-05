@@ -17,6 +17,65 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
       "filename": "aapl-20250927.htm",
       "sha256": "37aefffd496784c51157131a910702ff2f8c0da29fccb4100a58db2d04a5332d"
+    },
+    {
+      "id": "wmt-2026-q3",
+      "company": "Walmart",
+      "form": "10-Q",
+      "fiscal_year": 2026,
+      "fiscal_period": "Q3",
+      "period_end": "2025-10-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000191/wmt-20251031.htm",
+      "filename": "wmt-20251031.htm",
+      "sha256": "c41cb23203f717dbc64528b77cadccae3c85c4ae7e4c42878771d84f2aea7f5a"
+    },
+    {
+      "id": "amzn-2025",
+      "company": "Amazon",
+      "form": "10-K",
+      "fiscal_year": 2025,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+      "filename": "amzn-20251231.htm",
+      "sha256": "eb654587344b18d6260cc9a1ccd4f41ddcafb2f7ed45cf7ec17197ffb19730d1"
+    }
+  ],
+  "pdf_documents": [
+    {
+      "id": "wmt-2025-pdf",
+      "company": "Walmart",
+      "form": "ARS",
+      "format": "pdf",
+      "fiscal_year": 2025,
+      "period_end": "2025-01-31",
+      "html_document_id": "wmt-2025",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000059/walmartannualreport2025.pdf",
+      "official_index_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000059/0000104169-25-000059-index.htm",
+      "filename": "walmartannualreport2025.pdf",
+      "sha256": "d7b6aa4c32d8dd43752dbb2aeae521be712170ea1d672dc82b0bcd5cda86e1e0",
+      "verification": {
+        "company": "Walmart Inc.",
+        "embedded_form": "10-K",
+        "fiscal_period_end": "2025-01-31",
+        "cover_evidence": "FORM 10-K; WALMART INC.; For the fiscal year ended January 31, 2025",
+        "cover_pdf_page": 3,
+        "reviewed_tables": [
+          "Consolidated Statements of Income",
+          "Note 12. Segments and Disaggregated Revenue"
+        ]
+      }
+    },
+    {
+      "id": "amzn-2025-pdf",
+      "company": "Amazon",
+      "form": "ARS",
+      "format": "pdf",
+      "fiscal_year": 2025,
+      "period_end": "2025-12-31",
+      "html_document_id": "amzn-2025",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041036/tm263815d4_ars.pdf",
+      "official_index_url": "https://www.sec.gov/Archives/edgar/data/1018724/0001104659-26-041036-index.htm",
+      "filename": "amazonannualreport2025.pdf",
+      "sha256": "0a754fb01474544f47f6c0d15f4fc6079bbbfc2d62659aa0a0a6bed2aa61b6ad"
     }
   ]
 }

@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "declared_at": "2026-10-01",
+  "selection": "Purposive cross-issuer annual sample, fixed before extraction. Five new filing groups / ten additional documents (paired official HTML/PDF), not ten independent filings. Microsoft and Alphabet development; entire Meta, healthcare Johnson & Johnson, and Costco groups held out. No substitutions based on extraction outcomes.",
+  "annotation_plan": "At least 100 distinct numeric facts across five filings, checked separately in each representation; include consolidated statements, segment notes and a financial footnote. Tables selected from audited notes, not MD&A repeats. Whole-document financial selection scored separately from class-agnostic table inventory and oracle-located cell diagnostics.",
+  "scan_coverage": "No genuine scans selected: no suitable official image-only financial report verified in source search. Simulated scans are excluded from this evaluation and retain their separate milestone 10 scores.",
+  "documents": [
+    {
+      "id": "msft-2024-html",
+      "company": "Microsoft",
+      "filing_group": "msft-2024",
+      "split": "development",
+      "format": "html",
+      "form": "10-K",
+      "fiscal_year": 2024,
+      "start_date": "2023-07-01",
+      "end_date": "2024-06-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+      "filename": "msft-2024.htm",
+      "sha256": "4816ae7a9a1004c3e27f6c461f3b953a23bc044f1bc63109228bfdf6b3015401",
+      "target_table_types": [
+        "statement",
+        "segment_note",
+        "financial_footnote"
+      ],
+      "verification": {
+        "company_and_fiscal_year": "Verified in original report headings/cover and annual statement headers; paired tables visually checked",
+        "financial_tables": "Income statement, segment note and tax footnote located independently before extraction",
+        "representation": "original official text document; not a simulated scan"
+      }
+    },
+    {
+      "id": "msft-2024-pdf",
+      "company": "Microsoft",
+      "filing_group": "msft-2024",
+      "split": "development",
+      "format": "pdf",
+      "form": "Annual report including 10-K",
+      "fiscal_year": 2024,
+      "start_date": "2023-07-01",
+      "end_date": "2024-06-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242888/d815777dars.pdf",
+      "filename": "msft-2024.pdf",
+      "sha256": "979a3f8199702397e080719dc1212242eb2580bed78b5dab92d3f576d6abf5bc",
+      "target_table_types": [
+        "statement",
+        "segment_note",
+        "financial_footnote"
+      ],
+      "verification": {
+        "company_and_fiscal_year": "Verified in original report headings/cover and annual statement headers; paired tables visually checked",
+        "financial_tables": "Income statement, segment note and tax footnote located independently before extraction",
+        "representation": "original official text document; not a simulated scan"
+      }
+    },
+    {
+      "id": "goog-2024-html",
+      "company": "Alphabet",
+      "filing_group": "goog-2024",
+      "split": "development",
+      "format": "html",
+      "form": "10-K",
+      "fiscal_year": 2024,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000014/goog-20241231.htm",
+      "filename": "goog-2024.htm",
+      "sha256": "d311976e3d3eebbdbffcb7284a8e9b81d4abc7d2e5883bdf5731987c08a1fd26",
+      "target_table_types": [
+        "statement",
+        "segment_note",
+        "financial_footnote"
+      ],
+      "verification": {
+        "company_and_fiscal_year": "Verified in original report headings/cover and annual statement headers; paired tables visually checked",
+        "financial_tables": "Income statement, segment note and tax footnote located independently before extraction",
+        "representation": "original official text document; not a simulated scan"
+      }
+    },
+    {
+      "id": "goog-2024-pdf",
+      "company": "Alphabet",
+      "filing_group": "goog-2024",
+      "split": "development",
+      "format": "pdf",
+      "form": "Annual report including 10-K",
+      "fiscal_year": 2024,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000513/goog012714-ars.pdf",
+      "filename": "goog-2024.pdf",
+      "sha256": "5ac77db34cc0eab3f8b41f4840bae0104ce30c9b0b335bc8445991b5237ac412",
+      "target_table_types": [
+        "statement",
+        "segment_note",
+        "financial_footnote"
+      ],
+      "source_attempts": [
+        {
+          "url": "https://abc.xyz/assets/99/21/46cafdba41089a12a2d86ea47d44/goog026-annualreport2024-web.pdf",
+          "result": "HTTP 403 before extraction"
+        }
+      ],
+      "verification": {
+        "company_and_fiscal_year": "Verified in original report headings/cover and annual statement headers; paired tables visually checked",
+        "financial_tables": "Income statement, segment note and tax footnote located independently before extraction",
+        "representation": "original official text document; not a simulated scan",
+        "text_limitation": "Visible financial tables are readable when rendered, but pdfplumber text contains CID placeholders; retain as difficult text-PDF case"
+      }
+    },
+    {
+      "id": "meta-2024-html",
+      "company": "Meta Platforms",
+      "filing_group": "meta-2024",
+      "split": "held_out",
+      "format": "html",
+      "form": "10-K",
+      "fiscal_year": 2024,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000017/meta-20241231.htm",
+      "filename": "meta-2024.htm",
+      "sha256": "7ac99ce47ac0b7c7d08393ec8aedb1076177bd76ebd8cde441cee4fd47abf8fb",
+      "target_table_types": [
+        "statement",
+        "segment_note",
+        "financial_footnote"
+      ],
+      "verification": {
+        "company_and_fiscal_year": "Verified in original report headings/cover and annual statement headers; paired tables visually checked",
+        "financial_tables": "Income statement, segment note and tax footnote located independently before extraction",
+        "representation": "original official text document; not a simulated scan"
+      }
+    },
+    {
+      "id": "meta-2024-pdf",
+      "company": "Meta Platforms",
+      "filing_group": "meta-2024",
+      "split": "held_out",
+      "format": "pdf",
+      "form": "Annual report including 10-K",
+      "fiscal_year": 2024,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "source_url": "https://s21.q4cdn.com/399680738/files/doc_financials/2024/ar/Meta-12-31-2024-10K-ARS.pdf",
+      "filename": "meta-2024.pdf",
+      "sha256": "9b81ad9b6ecb9e23b1d810b9cecabcad05e00386d24dd64b4cd44a5bab54a13f",
+      "target_table_types": [
+        "statement",
+        "segment_note",
+        "financial_footnote"
+      ],
+      "verification": {
+        "company_and_fiscal_year": "Verified in original report headings/cover and annual statement headers; paired tables visually checked",
+        "financial_tables": "Income statement, segment note and tax footnote located independently before extraction",
+        "representation": "original official text document; not a simulated scan"
+      }
+    },
+    {
+      "id": "jnj-2024-html",
+      "company": "Johnson & Johnson",
+      "filing_group": "jnj-2024",
+      "split": "held_out",
+      "format": "html",
+      "form": "10-K",
+      "fiscal_year": 2024,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-29",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040625000038/jnj-20241229.htm",
+      "filename": "jnj-2024.htm",
+      "sha256": "b54de8aa6f742878fdd60e4b99d2f9a2c94aedc011b7ac4225a065e4384168ef",
+      "target_table_types": [
+        "statement",
+        "segment_note",
+        "financial_footnote"
+      ],
+      "verification": {
+        "company_and_fiscal_year": "Verified in original report headings/cover and annual statement headers; paired tables visually checked",
+        "financial_tables": "Income statement, segment note and tax footnote located independently before extraction",
+        "representation": "original official text document; not a simulated scan"
+      }
+    },
+    {
+      "id": "jnj-2024-pdf",
+      "company": "Johnson & Johnson",
+      "filing_group": "jnj-2024",
+      "split": "held_out",
+      "format": "pdf",
+      "form": "Annual report including 10-K",
+      "fiscal_year": 2024,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-29",
+      "source_url": "https://www.jnj.com/download/johnson-johnson-2024-annual-report",
+      "filename": "jnj-2024.pdf",
+      "sha256": "021e9e39e4b4b1c71f308b761ce684a92ff55c784f72b3309dc6b61ce1839de6",
+      "target_table_types": [
+        "statement",
+        "segment_note",
+        "financial_footnote"
+      ],
+      "verification": {
+        "company_and_fiscal_year": "Verified in original report headings/cover and annual statement headers; paired tables visually checked",
+        "financial_tables": "Income statement, segment note and tax footnote located independently before extraction",
+        "representation": "original official text document; not a simulated scan"
+      }
+    },
+    {
+      "id": "cost-2024-html",
+      "company": "Costco",
+      "filing_group": "cost-2024",
+      "split": "held_out",
+      "format": "html",
+      "form": "10-K",
+      "fiscal_year": 2024,
+      "start_date": "2023-09-04",
+      "end_date": "2024-09-01",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983224000049/cost-20240901.htm",
+      "filename": "cost-2024.htm",
+      "sha256": "52264c47a5e313bcace926f1e7b20f3a670d84e9f9e7cc4d5f56fe9f1edce3ab",
+      "target_table_types": [
+        "statement",
+        "segment_note",
+        "financial_footnote"
+      ],
+      "verification": {
+        "company_and_fiscal_year": "Verified in original report headings/cover and annual statement headers; paired tables visually checked",
+        "financial_tables": "Income statement, segment note and tax footnote located independently before extraction",
+        "representation": "original official text document; not a simulated scan"
+      }
+    },
+    {
+      "id": "cost-2024-pdf",
+      "company": "Costco",
+      "filing_group": "cost-2024",
+      "split": "held_out",
+      "format": "pdf",
+      "form": "Annual report including 10-K",
+      "fiscal_year": 2024,
+      "start_date": "2023-09-04",
+      "end_date": "2024-09-01",
+      "source_url": "https://s201.q4cdn.com/287523651/files/doc_financials/2024/ar/COST-2024-Annual-Report.pdf",
+      "filename": "cost-2024.pdf",
+      "sha256": "bdeca9c1891ffbee65796ade60212f61f7a29790b962e15076b6159c6d288612",
+      "target_table_types": [
+        "statement",
+        "segment_note",
+        "financial_footnote"
+      ],
+      "verification": {
+        "company_and_fiscal_year": "Verified in original report headings/cover and annual statement headers; paired tables visually checked",
+        "financial_tables": "Income statement, segment note and tax footnote located independently before extraction",
+        "representation": "original official text document; not a simulated scan"
+      }
+    }
+  ]
+}

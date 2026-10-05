@@ -1,0 +1,7 @@
+{
+  "id": "synthetic",
+  "source": "Original project-authored synthetic fixture; no downloaded filing",
+  "file": "statement.html",
+  "sha256": "57131ecc05c02b6a1862a37a511fe212e45cf98fbaf79c7386b5a42da66d3384",
+  "mapping": "Explicit demo-only rows, USD millions, FY2025; not automatic issuer discovery"
+}

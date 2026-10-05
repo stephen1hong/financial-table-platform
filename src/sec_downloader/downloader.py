@@ -67,7 +67,8 @@ def _get_sec_user_agent() -> str:
     return user_agent.strip()
 
 
-def download_document(document: dict[str, Any], raw_dir: str | Path = RAW_DIR) -> dict[str, Any]:
+def download_document(document: dict[str, Any], raw_dir: str | Path = RAW_DIR,
+                      manifest_path: str | Path = MANIFEST_PATH) -> dict[str, Any]:
     cache_dir = Path(raw_dir)
     cache_dir.mkdir(parents=True, exist_ok=True)
 
@@ -76,30 +77,32 @@ def download_document(document: dict[str, Any], raw_dir: str | Path = RAW_DIR) -
         document["source_url"],
         headers={
             "User-Agent": _get_sec_user_agent(),
-            "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
+            "Accept": "application/pdf" if document.get("format") == "pdf" else "text/html,application/xhtml+xml,*/*;q=0.8",
             "Accept-Language": "en-US,en;q=0.9",
         },
         timeout=30,
     )
     response.raise_for_status()
+    if document.get("format") == "pdf" and not response.content.startswith(b"%PDF-"):
+        raise RuntimeError("Download is not a PDF; cache was not modified")
 
     target_path.write_bytes(response.content)
     document["sha256"] = compute_sha256(target_path)
     print(f"Downloaded {document['filename']} -> {document['sha256']}")
-    manifest = load_manifest(MANIFEST_PATH)
-    for manifest_document in manifest["documents"]:
+    manifest = load_manifest(manifest_path)
+    for manifest_document in manifest["documents"] + manifest.get("pdf_documents", []):
         if manifest_document["id"] == document["id"]:
             manifest_document["sha256"] = document["sha256"]
             break
-    save_manifest(manifest, MANIFEST_PATH)
+    save_manifest(manifest, manifest_path)
     return document
 
 
 def run_downloads(manifest_path: str | Path = MANIFEST_PATH, raw_dir: str | Path = RAW_DIR) -> None:
     manifest = load_manifest(manifest_path)
-    for document in manifest["documents"]:
+    for document in manifest["documents"] + manifest.get("pdf_documents", []):
         if should_download_document(document, raw_dir):
-            download_document(document, raw_dir)
+            download_document(document, raw_dir, manifest_path)
 
 
 def main() -> int:

@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-10-01T15:07:21.278834+00:00",
+  "fingerprint": {
+    "src/sec_downloader/__init__.py": "f1ccaf15dbab5747b7445870b5478501d4dc437388d3d6341695b0ac16e79e73",
+    "src/sec_downloader/__main__.py": "416d4c204c755a303aa29769c816a46e184539ad3ca4cb98c6135349ba73fe6b",
+    "src/sec_downloader/accounting.py": "edfc516e1852540e4a16539e46d176ff20f108fb8657674c9e250528f369c9f3",
+    "src/sec_downloader/benchmark.py": "8094e09f7b714da374d9cccbcbb2adf9b2e1cbb18ca38563d834514a148e2068",
+    "src/sec_downloader/downloader.py": "c85a86edaa56e058e4266154480b1199d4654850a3b4c0e314de01fe263e48ac",
+    "src/sec_downloader/evaluation.py": "8628bf4f7dcc9859e8bcf4fbd869831d54793695822ee24756588596ce80d08c",
+    "src/sec_downloader/extractor.py": "6760cdcd6d00a1a661cdf0a0ef35b0dbf7d012b41dd52b4baf1f0b8b12758c01",
+    "src/sec_downloader/filing_profiles.py": "30fbe4893a829fa6b9cf5a18ef1e28bf0f0e41a47e8a3060e49fb56533762366",
+    "src/sec_downloader/inventory.py": "394138cfb2464ac44bbabb8ca86e1e1e18ef2fb7e6754c2070f59280f6de61d6",
+    "src/sec_downloader/logical_table.py": "3c35a134cb7d50221f87cd85b7f71df65c0ec9f137cbed625077f302b5baeda6",
+    "src/sec_downloader/manifest.py": "156c0e32bc65c0739e6fe1b96735c02dea2adcd06d38365810ee2eb495cbeea6",
+    "src/sec_downloader/metrics.py": "6fda85f71556befb4f0fc8e5ac3bfd3458f282102866f9e7d64f6a02b05c0f82",
+    "src/sec_downloader/ocr_adapter.py": "ec832871296e742768ebe93b3c28d6dc1626196d321bb454672426a2f360e889",
+    "src/sec_downloader/ocr_benchmark.py": "e2a84e9fad6e21b8dc52afcd8caed28b2f43e7cb8c6d46a708bdb5a5c99ad964",
+    "src/sec_downloader/pdf_adapter.py": "b9b7137864b329ebfa96334105b7c9e15cc696c200037a87342d408e958f4403",
+    "src/sec_downloader/periods.py": "f1c9274c41484a4e81a7f8243487e191b063beccb8e477e1dd80a7d5c9248797",
+    "src/sec_downloader/raw_table.py": "3a4ac3283f8063450dbd3f1d32a1774ecea73b87242fa36f5cf54b184028a062",
+    "src/sec_downloader/review_app.py": "7c08a4bc50b3084b4331825c44420d87e6b69bde894b746b1d2c2aa7c4c88d03",
+    "src/sec_downloader/review_pipeline.py": "069e7ad7f9fdea3730f736820a651e24ba7d80ff11e92a2a00357d8b54d56177",
+    "src/sec_downloader/review_store.py": "d326e9dbe5ebf3882de27a3cc052663116c442fc575a0ab7e6847149bc240242",
+    "src/sec_downloader/segment_reporting.py": "07db0ee4efbed76044cb5d70ada7f1c86a2a7e772d5967ddbf1e3f0a622c8f1b",
+    "src/sec_downloader/segments.py": "7cc9363145146b7b59115d46703a15e20550d8a6d60fde1da68202c6fac8d2a8",
+    "src/sec_downloader/simulated_scans.py": "33c155d92032fedeee42958906d938f96bcadeacb1117d5283d2a1f596b6d3d1",
+    "src/sec_downloader/validation.py": "22b076a8d074b383858de2f617f9a50b8fbff387ef1e3393e522d35dc2ca105c",
+    "src/sec_downloader/xbrl_context.py": "d4e20de6fd5bac2817528e459ffdf7c850501fd1a7768a698a643f3b24750d1b",
+    "evaluation/manifest.json": "c1fdbf0069118cd44887872b8848b5f2ed6c4f8d365a7ad76a2a7ab5f21fcd12",
+    "evaluation/references.json": "2aab3a7cb305590b23580a2189b46381a11e0514f3db2557a04a86d2375b925b",
+    "evaluation/reference_rows.json": "5b7920f5ff2d4eb680714d42b5f0d3f23166afe6bb141048f2edd62802632e49"
+  }
+}

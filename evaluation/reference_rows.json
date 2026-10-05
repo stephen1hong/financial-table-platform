@@ -1,0 +1,100 @@
+{
+  "method": "Values manually transcribed from original HTML tables, then visually checked against rendered official PDF pages, before running the evaluated pipeline. No sec_downloader predictions or review database used. One annotator (Codex), two source representations; not a blinded second-human audit. Values below are displayed amounts, not base-dollar scaling. Years are in the order listed. Source table indexes are annotation locators only, never extraction selection rules.",
+  "companies": {
+    "msft": {
+      "years": [2024, 2023, 2022],
+      "tables": {
+        "statement": {"html_table":25,"pdf_page":48,"printed_page":46,"heading":"Income Statements","rows":[
+          ["Total revenue",0,"total_revenues","Consolidated",["245122","211915","198270"]],
+          ["Operating income",0,"operating_income","Consolidated",["109433","88523","83383"]],
+          ["Net income",0,"net_income","Consolidated",["88136","72361","72738"]]
+        ]},
+        "segment_note": {"html_table":79,"pdf_page":85,"printed_page":83,"heading":"Segment revenue and operating income","rows":[
+          ["Productivity and Business Processes",1,"operating_income","Productivity and Business Processes",["40540","34189","29690"]],
+          ["Intelligent Cloud",1,"operating_income","Intelligent Cloud",["49584","37884","33203"]],
+          ["More Personal Computing",1,"operating_income","More Personal Computing",["19309","16450","20490"]]
+        ]},
+        "financial_footnote": {"html_table":60,"pdf_page":73,"printed_page":71,"heading":"Note 12 - Provision for Income Taxes","rows":[
+          ["Current taxes",0,"current_income_tax_expense","Consolidated",["24389","23009","16680"]],
+          ["Deferred taxes",0,"deferred_income_tax_expense","Consolidated",["-4738","-6059","-5702"]]
+        ]}
+      }
+    },
+    "goog": {
+      "years":[2022,2023,2024],
+      "tables": {
+        "statement": {"html_table":85,"pdf_page":58,"printed_page":50,"heading":"Consolidated Statements of Income","rows":[
+          ["Revenues",0,"total_revenues","Consolidated",["282836","307394","350018"]],
+          ["Income from operations",0,"operating_income","Consolidated",["74842","84293","112390"]],
+          ["Net income",0,"net_income","Consolidated",["59972","73795","100118"]]
+        ]},
+        "segment_note": {"html_table":163,"pdf_page":97,"printed_page":89,"heading":"Note 15 - Information about Segments","rows":[
+          ["Google Services",1,"operating_income","Google Services",["82699","95858","121263"]],
+          ["Google Cloud",1,"operating_income","Google Cloud",["-1922","1716","6112"]],
+          ["Other Bets",1,"operating_income","Other Bets",["-4636","-4095","-4444"]]
+        ]},
+        "financial_footnote": {"html_table":157,"pdf_page":93,"printed_page":85,"heading":"Note 14 - Effective tax rate reconciliation","unit":"percent","rows":[
+          ["U.S. federal statutory tax rate",0,"statutory_tax_rate","Consolidated",["21.0","21.0","21.0"]],
+          ["Effective tax rate",0,"effective_tax_rate","Consolidated",["15.9","13.9","16.4"]]
+        ]}
+      }
+    },
+    "meta": {
+      "years":[2024,2023,2022],
+      "tables": {
+        "statement": {"html_table":26,"pdf_page":89,"printed_page":87,"heading":"Consolidated Statements of Income","rows":[
+          ["Revenue",0,"total_revenues","Consolidated",["164501","134902","116609"]],
+          ["Income from operations",0,"operating_income","Consolidated",["69380","46751","28944"]],
+          ["Net income",0,"net_income","Consolidated",["62360","39098","23200"]]
+        ]},
+        "segment_note": {"html_table":63,"pdf_page":123,"printed_page":121,"heading":"Note 16 - Segment and Geographical Information","rows":[
+          ["Revenue",0,"total_revenues","Family of Apps",["162355","133006","114450"]],
+          ["Revenue",1,"total_revenues","Reality Labs",["2146","1896","2159"]],
+          ["Loss from operations",0,"operating_income","Reality Labs",["-17729","-16120","-13717"]]
+        ]},
+        "financial_footnote": {"html_table":59,"pdf_page":120,"printed_page":118,"heading":"Note 15 - Provision for income taxes","rows":[
+          ["Total current tax expense",0,"current_income_tax_expense","Consolidated",["13040","8199","8896"]],
+          ["Total deferred tax (benefits)/expense",0,"deferred_income_tax_expense","Consolidated",["-4737","131","-3277"]]
+        ]}
+      }
+    },
+    "jnj": {
+      "years":[2024,2023,2022],
+      "tables": {
+        "statement": {"html_table":78,"pdf_page":57,"printed_page":45,"heading":"Consolidated statements of earnings","rows":[
+          ["Sales to customers",0,"net_sales","Consolidated",["88821","85159","79990"]],
+          ["Net earnings from continuing operations",0,"continuing_net_income","Consolidated",["14066","13326","16370"]],
+          ["Net earnings",0,"net_income","Consolidated",["14066","35153","17941"]]
+        ]},
+        "segment_note": {"html_table":177,"pdf_page":99,"printed_page":87,"heading":"Income Before Tax by Segment","rows":[
+          ["Sales to customers",0,"net_sales","Innovative Medicine",["56964","54759","52563"]],
+          ["Sales to customers",0,"net_sales","MedTech",["31857","30400","27427"]],
+          ["Less: Expense not allocated to segments (2)",0,"unallocated_expense","Corporate/unallocated",["5972","7853","735"]]
+        ]},
+        "financial_footnote": {"html_table":128,"pdf_page":79,"printed_page":67,"heading":"Note 8 - Income taxes on continuing operations","rows":[
+          ["Total currently payable",0,"current_income_tax_expense","Consolidated",["4804","5795","4569"]],
+          ["Total deferred",0,"deferred_income_tax_expense","Consolidated",["-2183","-4059","-1580"]]
+        ]}
+      }
+    },
+    "cost": {
+      "years":[2024,2023,2022],
+      "tables": {
+        "statement": {"html_table":27,"pdf_page":42,"printed_page":36,"heading":"Consolidated Statements of Income","rows":[
+          ["Net sales",0,"net_sales","Consolidated",["249625","237710","222730"]],
+          ["Operating income",0,"operating_income","Consolidated",["9285","8114","7793"]],
+          ["NET INCOME ATTRIBUTABLE TO COSTCO",0,"net_income","Consolidated",["7367","6292","5844"]]
+        ]},
+        "segment_note": {"html_table":55,"pdf_page":66,"printed_page":60,"heading":"Note 11 - Segment Reporting","years_in_rows":true,"rows":[
+          ["Total revenue",0,"total_revenues","United States",["184143","176630","165294"]],
+          ["Total revenue",0,"total_revenues","Canada",["34874","33056","31675"]],
+          ["Total revenue",0,"total_revenues","Other International",["35436","32604","29985"]]
+        ]},
+        "financial_footnote": {"html_table":50,"pdf_page":60,"printed_page":54,"heading":"Note 8 - Income tax provision","rows":[
+          ["Total federal",0,"federal_income_tax_expense","Consolidated",["1293","1089","763"]],
+          ["Total state",0,"state_income_tax_expense","Consolidated",["354","384","328"]]
+        ]}
+      }
+    }
+  }
+}

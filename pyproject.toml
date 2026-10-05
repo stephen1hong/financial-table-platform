@@ -5,9 +5,16 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "sec-filing-downloader"
 version = "0.1.0"
-description = "Reproducible SEC filing download milestone"
+description = "Source-traceable financial table extraction and local review for selected SEC filings"
+readme = "README.md"
 requires-python = ">=3.12"
-dependencies = ["requests>=2.31"]
+dependencies = [    "beautifulsoup4",
+"requests>=2.31", "pdfplumber>=0.11.10,<0.12"]
+
+[project.optional-dependencies]
+test = ["pytest>=9,<10"]
+ocr = ["rapidocr-onnxruntime==1.4.4", "reportlab==5.0.1", "onnxruntime==1.30.0", "opencv-python==5.0.0.93"]
+review = ["flask>=3.1,<4", "waitress>=3,<4"]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -15,5 +22,11 @@ package-dir = {"" = "src"}
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+sec_downloader = ["templates/*.html", "static/*.css", "static/*.js"]
+
 [tool.pytest.ini_options]
+addopts = "-m 'not real_data and not ocr'"
+markers = ["real_data: requires separately downloaded checksum-verified filings", "ocr: optional OCR dependencies; excluded from default CI"]
+testpaths = ["tests"]
 pythonpath = ["src"]

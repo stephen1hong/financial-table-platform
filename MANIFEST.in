@@ -1,0 +1,3 @@
+include README.md SUPPORTED_FORMATS.md CHANGELOG.md LICENSE_DECISION.md THIRD_PARTY_NOTICES.md
+recursive-include src/sec_downloader/templates *.html
+recursive-include src/sec_downloader/static *.js *.css

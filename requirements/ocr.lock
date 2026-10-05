@@ -1,0 +1,13 @@
+-r release.lock
+flatbuffers==25.12.19
+numpy==2.5.3
+onnxruntime==1.30.0
+opencv-python==5.0.0.93
+protobuf==7.36.2
+pyclipper==1.4.0
+PyYAML==6.0.3
+rapidocr-onnxruntime==1.4.4
+reportlab==5.0.1
+shapely==2.1.2
+six==1.17.0
+tqdm==4.70.1

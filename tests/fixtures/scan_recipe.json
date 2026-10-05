@@ -1,0 +1,15 @@
+{
+  "label": "Simulated scans, not independently acquired real scans",
+  "source_filename": "walmartannualreport2025.pdf",
+  "source_sha256": "d7b6aa4c32d8dd43752dbb2aeae521be712170ea1d672dc82b0bcd5cda86e1e0",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000059/walmartannualreport2025.pdf",
+  "pages": [55, 80],
+  "variants": [
+    {"id": "clean", "dpi": 300, "rotation_degrees": 0},
+    {"id": "low_resolution", "dpi": 100, "rotation_degrees": 0},
+    {"id": "rotated", "dpi": 200, "rotation_degrees": 1.5}
+  ],
+  "color_mode": "RGB",
+  "rotation_resampling": "Pillow BICUBIC, expand=false, white fill",
+  "pdf_encoding": "ReportLab invariant=1, lossless image embedding, no text layer"
+}
